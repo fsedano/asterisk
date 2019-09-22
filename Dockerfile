@@ -15,7 +15,8 @@ RUN make install
 RUN make samples
 RUN make config && ldconfig
 RUN groupadd asterisk && useradd -r -d /var/lib/asterisk -g asterisk asterisk &&  usermod -aG audio,dialout asterisk
-RUN apt-get install -y tcpdump
+RUN apt-get install -y tcpdump festival
+COPY festival/* /etc/
 COPY bootstrap/* /
 COPY dialplan/* /etc/asterisk/
 #CMD [ "/bin/bash", "-c", "sleep 100000" ]
