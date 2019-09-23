@@ -1,3 +1,4 @@
+LABEL maintainer="fran@fransedano.net"
 FROM ubuntu:18.04
 WORKDIR /asterisk
 RUN apt-get update && apt-get install -y git curl vim
